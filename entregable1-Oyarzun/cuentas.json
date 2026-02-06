@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nombre": "Caja de ahorro en Pesos",
+    "saldo": 150000
+  },
+  {
+    "id": 2,
+    "nombre": "Caja de ahorro USD",
+    "saldo": 2000
+  }
+]

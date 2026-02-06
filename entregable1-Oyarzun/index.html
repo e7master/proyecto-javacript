@@ -3,28 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulador Home Banking</title>
+    <!--css-->
     <link rel="stylesheet" href="../css/style.css">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!--Alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary shadow">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">🏦Home Banking</span>
+        </div>
+    </nav>
+    <div class="container mt-4 mb-4">
+        <div class="card shadow p-3 text-center">
+            <img src="../medios/homebanking.jpg" 
+                alt="Home Banking"
+                class="img-fluid rounded"
+                style="max-height: 300px; object-fit: cover;">
+        </div>
+    </div>
 
-<body>
-    <h1> Sistema de facturacion </h1>
-    
-    <!--Catalogo-->
-    <section>
-        <h2>Catalogo de productos</h2>
-        <div id="catalogo"></div>
-    </section>
+    <main class="container py-5">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Mis cuentas</h4>
+            </div>
 
-    <!--Carrito-->
-    <section>
-        <h2>Carrito</h2>
-        <div id="carrito"></div>
-        <div id="totales"></div>
-        <button id="btn-finalizar">Finalizar compra</button>
-        <button id="btn-vaciar">Vaciar carrito</button>
-        <div id="mensaje"></div>
-    </section>
-    <script src="main.js"></script>
+            <div class="card-body">
+                <div id="cuentas" class="row g-3">
+                    <!--genera cuentas-->
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow mb-4">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Transferir dinero</h4>
+            </div>
+
+            <!--saldo actual-->
+            <div class="card-body border-bottom">
+                <h5 class="mb-0">
+                    Saldo actual: $<span id="saldoPantalla">0</span>
+                </h5>
+            </div>
+
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Monto</label>
+                        <input id="monto" type="number" class="form-control" placeholder="Ingrese monto">
+                    </div>
+
+                    <div class="col-md-6 d-flex align-items-end">
+                        <button id="btnTransferir" class="btn btn-success w-100">
+                            Transferir
+                        </button>
+                    </div>
+                    <div class="col-12">
+                        <button id="btnReset" class="btn btn-danger w-100">Resetear datos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Historial de movimientos</h4>
+            </div>
+
+            <div class="card-body">
+                <ul id="historial" class="list-group">
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!--Js-->
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
